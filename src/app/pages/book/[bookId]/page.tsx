@@ -60,7 +60,7 @@ const BookId: React.FC = () => {
         <Slider {...settings} ref={sliderRef}>
           {images.map((item) => (
             <div key={item.id} className="pdf-images">
-              <Image src={item.img} width={1300} height={800} className="pdf-image" alt="items-images" />
+              <Image src={item.img} width={1150} height={700} className="pdf-image" alt="items-images" />
             </div>
           ))}
         </Slider>
