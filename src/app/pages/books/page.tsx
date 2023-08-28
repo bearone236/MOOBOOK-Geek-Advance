@@ -21,7 +21,7 @@ interface Book {
 const baseURL = 'https://sheets.googleapis.com/v4/spreadsheets/1Bcc9S-zQJeEirqOIvml2C3AMziyVFGvf4sMtVa3Ch6s/values/haka?key=AIzaSyA4PLe6OiOkD82M-dB9gyVaV3myLE0CBkg';
 const data_number = 7;
 
-const BooksPage: React.FC<Book> = () => {
+const BooksPage: React.FC = () => {
   const [booksData, setBooksData] = useState<Book[]>([]);
   const { pose } = usePose();
   const linkRef = useRef<HTMLAnchorElement>(null);
