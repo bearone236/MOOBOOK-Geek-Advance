@@ -49,7 +49,7 @@ const BookId: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '70px',
+    centerPadding: '60px',
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
