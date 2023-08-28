@@ -1,0 +1,46 @@
+/*---------------------------------
+book.jsxファイルCSS
+----------------------------------*/
+.pdf-images {
+  text-align: center;
+  margin: 0 auto;
+  text-align: -webkit-center;
+}
+
+/*---------------------------------
+books.jsxファイルCSS
+----------------------------------*/
+.books {
+  display: block;
+  width: 100%;
+}
+
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  text-align: center;
+}
+
+.slider-item h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.slider-item-image {
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.slick-next {
+  right: 0;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 25px;
+  z-index: 1;
+}

@@ -1,0 +1,35 @@
+/*---------------------------------
+header.jsxファイルCSS
+----------------------------------*/
+header {
+  /* text-align: center; */
+  padding: 8px 0;
+  padding-left: 10px;
+  margin-bottom: 50px;
+  /* background-color: #a578df; */
+  background-color: white;
+  border-bottom: 5px solid #a578df;
+}
+
+.homeMenu p {
+  font-size: 40px;
+}
+
+.headerImage {
+  width: 15%;
+  height: 20%;
+}
+
+/*---------------------------------
+camera.jsxファイルCSS
+----------------------------------*/
+.videocontainer {
+  transform: scaleX(-1);
+}
+
+.camera {
+  position: absolute;
+  right: 0;
+  bottom: -1%;
+  z-index: 10000;
+}
