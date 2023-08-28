@@ -12,17 +12,7 @@ import Link from 'next/link';
 import { usePose } from '../../../function/postcontext';
 import '../../../styles/pages.css';
 
-interface ImageFile {
-  id: number;
-  bookId: string;
-  title: string;
-}
-
-interface BookIdPageProps {
-  imageFiles: ImageFile;
-}
-
-const BookId: React.FC<BookIdPageProps> = () => {
+const BookId: React.FC = () => {
   const searchParams = useSearchParams();
   const bookId = searchParams.get('bookId');
 
