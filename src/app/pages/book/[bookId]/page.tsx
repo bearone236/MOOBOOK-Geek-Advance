@@ -22,15 +22,17 @@ const BookId: React.FC = () => {
 
   useEffect(() => {
     if (pose === 'toright') {
+      console.log('前のページへ');
       if (sliderRef.current) {
         sliderRef.current.slickNext();
       }
     } else if (pose === 'toleft') {
+      console.log('次のページへ');
       if (sliderRef.current) {
         sliderRef.current.slickPrev();
       }
     } else if (pose === 'back') {
-      console.log('Back');
+      console.log('book/戻る');
       if (backRef.current) {
         backRef.current.click();
       }

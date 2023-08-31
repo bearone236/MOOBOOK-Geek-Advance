@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
       <div className={styles.homeMenu} id="start_button">
         <Link href="/pages/books" style={{ textDecoration: 'none' }} ref={linkRef}>
           <Image src="/images/Home-logo.png" alt="Home-logo" width={100000} height={100000} className={styles.homeImage} />
-          <p>手を挙げて🖐️</p>
+          <p>手を握って👊</p>
         </Link>
       </div>
     </section>
