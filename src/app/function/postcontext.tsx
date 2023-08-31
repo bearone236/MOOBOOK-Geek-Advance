@@ -27,6 +27,9 @@ export const PoseProvider: React.FC<PoseProviderProps> = ({ children }) => {
 
   const resetPose = () => {
     setPose('');
+    console.log(pose);
+    console.log("リセットされました")
+    console.log("-------------------------------")
   };
 
   const contextValue: PoseContextType = {

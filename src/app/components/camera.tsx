@@ -8,17 +8,17 @@ const Camera: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   // const outputRef = useRef<HTMLParagraphElement>(null);
   // const debugRef = useRef<HTMLParagraphElement>(null);
-  const { setPose } = usePose();
+  const { setPose , resetPose} = usePose();
   // const [gesture, setGesture] = useState<boolean>(false);
 
   useEffect(() => {
     let prevX: number | null = null;
     let prevY: number | null = null;
     // let timeout: number | timeout = 3000;
-    const threshold = 100;
-    const distThreshold = 100;
-    const timeout = 3000;
-
+    const threshold = 25;
+    const distThreshold = 75;
+    const timeout = 1000;
+    
     const setupCamera = async (): Promise<HTMLVideoElement> => {
       const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
       if (videoRef.current) {
@@ -35,6 +35,7 @@ const Camera: React.FC = () => {
     };
 
     const main = async () => {
+    
       await tf.ready();
 
       const video = await setupCamera();
@@ -63,6 +64,9 @@ const Camera: React.FC = () => {
           const degree = radian * (180 / Math.PI);
           // console.debug(degree);
           // debugRef.current.textContent = `angle: ${angle}`;
+          console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+          console.log(prevX);
+          console.log(prevY);
           console.log('---------------------------');
           if (degree > 60) {
             // outputRef.current.textContent = '手が閉じています';
@@ -86,12 +90,14 @@ const Camera: React.FC = () => {
               // console.log('手が右に移動しました');
               prevX = null;
               prevY = null;
+              resetPose();
               setPose('back');
               
               // setTimeout(timeout);
               } else{
               prevX = null;
               prevY = null;
+              resetPose()
               setPose('enter');}
 
 
@@ -111,15 +117,17 @@ const Camera: React.FC = () => {
                 // console.log('手が左に移動しました');
                 // setPose('toright');
                 prevX = null;
-                prevY = null;
+                // prevY = null;
                 // setTimeout(timeout);
+                resetPose()
               } else if (x_dist > threshold) {
                 // Flip}< prevX) { // Flip x-axis detection
                 // outputRef.current.textContent += `, 手が右に移動しました`;
                 console.log('手が右に移動しました');
+                resetPose()
                 setPose('toleft');
                 prevX = null;
-                prevY = null;
+                // prevY = null;
                 
                 // setTimeout(timeout);
               } else {
@@ -127,6 +135,7 @@ const Camera: React.FC = () => {
                 // console.log('手は左右には動いていません');
                 prevX = null;
                 prevY = null;
+                resetPose()
               }
 
               // console.log(y_dist);
@@ -139,9 +148,11 @@ const Camera: React.FC = () => {
                 prevY = null;
                 // setTimeout(timeout);
                 // setGesture(true);
+                resetPose()
               } else if (y_dist > distThreshold) {
                 // outputRef.current.textContent += ', 手が下に移動しました';
                 console.log('手が下に移動しました');
+                resetPose()
                 setPose('toright');
                 prevX = null;
                 prevY = null;
@@ -151,6 +162,7 @@ const Camera: React.FC = () => {
                 // console.log('手は上下に動いていません');
                 // prevX = null;
                 // prevY = null;
+                
               }
             }
 
@@ -165,7 +177,7 @@ const Camera: React.FC = () => {
           // prevX = null;
           // prevY = null;
         });
-      }, 1000);
+      }, 500);
     };
 
     main();
