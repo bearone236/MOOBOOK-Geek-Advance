@@ -1,13 +1,15 @@
 'use client';
 import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePose } from '../app/function/postcontext';
 import styles from './page.module.css';
 import Image from 'next/image';
+import './styles/loading.css';
 
 const HomePage: React.FC = () => {
   const { pose } = usePose();
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (pose === 'enter') {
@@ -17,6 +19,21 @@ const HomePage: React.FC = () => {
       }
     }
   }, [pose]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 9000);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="loader"></div>
+        <h3>カメラの起動中です。しばらくお待ちください</h3>
+      </div>
+    );
+  }
 
   return (
     <section className={styles.home}>
