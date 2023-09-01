@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 9000);
+    }, 10000);
   }, []);
 
   if (loading) {
