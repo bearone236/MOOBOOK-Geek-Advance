@@ -5,6 +5,7 @@ book.jsxファイルCSS
   text-align: center;
   margin: 0 auto;
   text-align: -webkit-center;
+  display: block;
 }
 
 /*---------------------------------
@@ -33,6 +34,7 @@ books.jsxファイルCSS
   width: 30%;
   height: auto;
   margin: 0 auto;
+  position: relative;
 }
 
 .slick-next {
