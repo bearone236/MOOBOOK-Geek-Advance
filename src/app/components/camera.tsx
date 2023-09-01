@@ -174,7 +174,7 @@ const Camera: React.FC = () => {
 
   return (
     <div>
-      <video ref={videoRef} id="video" width="310" height="160" autoPlay playsInline muted style={{ transform: 'scaleX(-1)' }}></video>
+      <video ref={videoRef} id="video" width="300" height="150" autoPlay playsInline muted style={{ transform: 'scaleX(-1)' }}></video>
       {/* <p ref={outputRef} id="output" className="hidden"></p> */}
       {/* <p ref={debugRef} id="debug" className="hidden"></p> */}
     </div>
