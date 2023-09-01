@@ -29,27 +29,26 @@ const BooksPage: React.FC = () => {
   const backRef = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     if (pose === 'enter') {
-      console.log('決定');
+      // console.log('決定');
       if (linkRef.current) {
         linkRef.current.click();
       }
     } else if (pose === 'toright') {
-      console.log('前のページへ');
+      // console.log('前のページへ');
       if (sliderRef.current) {
         sliderRef.current.slickNext();
       }
     } else if (pose === 'toleft') {
-      console.log('次のページへ');
+      // console.log('次のページへ');
       if (sliderRef.current) {
         sliderRef.current.slickPrev();
       }
-    } 
-    // else if (pose === 'back') {
-    //   console.log('books/戻る');
-    //   if (backRef.current) {
-    //     backRef.current.click();
-    //   }
-    // }
+    } else if (pose === 'back') {
+      // console.log('books/戻る');
+      if (backRef.current) {
+        backRef.current.click();
+      }
+    }
   }, [pose]);
 
   useEffect(() => {
