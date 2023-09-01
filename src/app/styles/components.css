@@ -11,13 +11,18 @@ header {
   border-bottom: 5px solid #a578df;
 }
 
+.header section {
+  display: flex;
+  justify-content: space-between;
+}
+
 .homeMenu p {
   font-size: 40px;
 }
 
 .headerImage {
-  width: 15%;
-  height: 20%;
+  width: 40%;
+  height: 100%;
 }
 
 /*---------------------------------
