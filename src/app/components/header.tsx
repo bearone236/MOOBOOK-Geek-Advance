@@ -14,10 +14,10 @@ const Header: React.FC = () => {
           </div>
           <Operate />
         </section>
+        <div className="camera">
+          <Camera />
+        </div>
       </header>
-      <div className="camera">
-        <Camera />
-      </div>
     </div>
   );
 };
